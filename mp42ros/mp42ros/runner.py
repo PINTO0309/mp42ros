@@ -33,12 +33,15 @@ class VideoPublisher(Node):
 
     def timer_callback(self):
         ret, frame = self.cap.read()
-        if not ret:
+        if not ret and self.loop:
             self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
             ret, frame = self.cap.read()
 
-        msg = self.bridge.cv2_to_imgmsg(frame, encoding='bgr8')
-        self.publisher_.publish(msg)
+        if ret:
+            msg = self.bridge.cv2_to_imgmsg(frame, encoding='bgr8')
+            self.publisher_.publish(msg)
+        else:
+            exit(0)
 
 def main():
     rclpy.init()
