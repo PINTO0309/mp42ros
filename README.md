@@ -15,3 +15,5 @@ ros2 run mp42ros runner \
 -p loop:=True \
 -p fps:=15.0
 ```
+
+https://github.com/PINTO0309/mp42ros/assets/33194443/8042fa00-6fd1-49b0-bff4-c1c5e2a6e31f
