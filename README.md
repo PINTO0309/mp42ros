@@ -22,6 +22,8 @@ ros-${DISTRO}-rosbag2 \
 ros-${DISTRO}-vision-opencv \
 ros-${DISTRO}-vision-msgs \
 ros-${DISTRO}-image-pipeline
+
+pip install opencv-contrib-python
 ```
 ## 2. Usage
 ```bash
